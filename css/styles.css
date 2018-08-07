@@ -1,0 +1,48 @@
+body {
+  font-size:36px;
+  overflow:hidden;
+}
+#stage {
+  
+}
+#left-side {
+  height:100%;
+  background:rgb(145, 145, 145)
+}
+#calculator {
+  /* h/w must be changed for portrait */
+  width:65vh;
+  height:90vh;
+  margin: 0 auto;
+  margin-top:5vh;
+}
+#display {
+  text-align:right;
+  height:10vh;
+}
+#button-area {
+
+}
+#terminal {
+  height:100%;
+  background: #333;
+}
+#footer {
+
+}
+.calc-panel {
+  border-color:gray;
+  padding:8px 20px 8px 20px;
+  margin:3vh;
+}
+.calc-key {
+  font-size:24px;
+  height:10vh;
+  box-sizing: border-box;
+  border:2px solid gray;
+}
+.tall-key {
+  height:11vh;
+  margin-top:2vh;
+  font-size:36px;
+}
