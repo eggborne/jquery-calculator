@@ -1,6 +1,7 @@
 body {
   font-size:36px;
   overflow:hidden;
+  transition: all 500 ease;
 }
 #stage {
 
@@ -21,6 +22,10 @@ body {
   height:10vh;
   font-size:1.8em;
   width:70%;
+}
+.radio {
+  font-size: initial;
+
 }
 #button-area {
 

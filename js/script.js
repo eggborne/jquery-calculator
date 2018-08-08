@@ -25,8 +25,6 @@ operators =
 $(document).ready(function(){
   printToDisplay("0")
   setButtonIDs()
-
-
   var addButton = $("#button-a")
   var minusButton = $("#button--")
   var multiplyButton = $("#button-m")
@@ -104,8 +102,27 @@ $(document).ready(function(){
     printToDisplay(result)
     lastButtonClicked = this
   })
-
-
+  $('#dark-button').click(function(){
+    $('#left-side').css({'background-color':'black'})
+    $('#calculator').css({'background-color':'#555'})
+    $('.calc-panel').css({'background-color':'#777'})
+    $('.calc-key').css({'background-color':'#999'})
+    $('body').css("color","white")
+  })
+  $('#cream-button').click(function(){
+    $('#left-side').css({'background-color':'wheat'})
+    $('#calculator').css({'background-color':'#abab9a'})
+    $('.calc-panel').css({'background-color':'#996300'})
+    $('.calc-key').css({'background-color':'#ffeaa8'})
+    $('body').css("color","white")
+  })
+  $('#default-button').click(function(){
+    $('#left-side').css({'background-color':'rgb(145, 145, 145)'})
+    $('#calculator').css({'background-color':'white'})
+    $('.calc-panel').css({'background-color':'initial'})
+    $('.calc-key').css({'background-color':'initial'})
+    $('body').css("color","initial")
+  })
 })
 
 function printToDisplay(string) {
