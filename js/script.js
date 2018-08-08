@@ -1,5 +1,7 @@
 var leftSideNumber = 0
+var rightSideNumber = 0
 var currentOperation = ""
+var lastButtonClicked
 
 operators =
 {
@@ -7,6 +9,7 @@ operators =
     return parseFloat(num1)+parseFloat(num2)
   },
   "-" : function(num1,num2) {
+    console.log("subracting " + num2 + " from " + num1)
     return parseFloat(num1)-parseFloat(num2)
   },
   "*" : function(num1,num2) {
@@ -38,6 +41,7 @@ $(document).ready(function(){
     $('#number-1').val(leftSideNumber)
     $("#display").text("0")
     currentOperation = operators["+"]
+    lastButtonClicked = this
   })
   minusButton.click(function(){
 
@@ -47,6 +51,7 @@ $(document).ready(function(){
     $('#number-1').val(leftSideNumber)
     $("#display").text("0")
     currentOperation = operators["-"]
+    lastButtonClicked = this
   })
   multiplyButton.click(function(){
 
@@ -56,6 +61,7 @@ $(document).ready(function(){
     $('#number-1').val(leftSideNumber)
     $("#display").text("0")
     currentOperation = operators["*"]
+    lastButtonClicked = this
   })
   divideButton.click(function(){
 
@@ -65,6 +71,7 @@ $(document).ready(function(){
     $('#number-1').val(leftSideNumber)
     $("#display").text("0")
     currentOperation = operators["÷"]
+    lastButtonClicked = this
   })
 
   $(".num-key").click(function(){
@@ -73,6 +80,7 @@ $(document).ready(function(){
       $('#display').text("")
     }
     addToDisplay(toPrint)
+    lastButtonClicked = this
   })
 
   clearButton.click(function(){
@@ -81,11 +89,20 @@ $(document).ready(function(){
   })
 
   equalsButton.click(function(){
-    console.log("clicked equals")
-    var rightSideNumber = $('#display').text()
+    console.log("L before: " + leftSideNumber)
+    if (lastButtonClicked !== this) {
+      console.log("wasn't equals last time!")
+      rightSideNumber = $('#display').text()
+    } else {
+      console.log("hit equals last tim!")
+    }
+    console.log("R before: " + rightSideNumber)
     var result = currentOperation(leftSideNumber,rightSideNumber)
-    leftSideNumber = rightSideNumber
+    leftSideNumber = result
+    console.log("L after operation: " + leftSideNumber)
+    console.log("R after operation: " + rightSideNumber)
     printToDisplay(result)
+    lastButtonClicked = this
   })
 
 
