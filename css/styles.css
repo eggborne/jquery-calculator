@@ -3,7 +3,7 @@ body {
   overflow:hidden;
 }
 #stage {
-  
+
 }
 #left-side {
   height:100%;
@@ -19,6 +19,8 @@ body {
 #display {
   text-align:right;
   height:10vh;
+  font-size:1.8em;
+  width:70%;
 }
 #button-area {
 
@@ -45,4 +47,11 @@ body {
   height:11vh;
   margin-top:2vh;
   font-size:36px;
+}
+
+.form-control {
+  margin-right:54px;
+  font-size:20px;
+  height:60px;
+  width:200px;
 }
